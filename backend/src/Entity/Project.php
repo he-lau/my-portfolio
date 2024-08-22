@@ -27,18 +27,22 @@ class Project
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $url = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE, options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\OneToMany(targetEntity: ProjectImage::class, mappedBy: 'projectID')]
     private Collection $projectImages;
 
+    #[ORM\OneToMany(targetEntity: ProjectSkillAssociation::class, mappedBy: 'projectID')]
+    private Collection $projectSkillAssociationsProjects;
+
     public function __construct()
     {
         $this->projectImages = new ArrayCollection();
+        $this->projectSkillAssociationsProjects = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -135,4 +139,37 @@ class Project
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, ProjectSkillAssociation>
+     */
+    public function getprojectSkillAssociationsProjects(): Collection
+    {
+        return $this->projectSkillAssociationsProjects;
+    }
+
+    public function addProjectSkillAssociation(ProjectSkillAssociation $projectSkillAssociation): static
+    {
+        if (!$this->projectSkillAssociationsProjects->contains($projectSkillAssociation)) {
+            $this->projectSkillAssociationsProjects->add($projectSkillAssociation);
+            $projectSkillAssociation->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProjectSkillAssociation(ProjectSkillAssociation $projectSkillAssociation): static
+    {
+        if ($this->projectSkillAssociationsProjects->removeElement($projectSkillAssociation)) {
+            // set the owning side to null (unless already changed)
+            if ($projectSkillAssociation->getProject() === $this) {
+                $projectSkillAssociation->setProject(null);
+            }
+        }
+
+        return $this;
+    }
+
+
+
 }

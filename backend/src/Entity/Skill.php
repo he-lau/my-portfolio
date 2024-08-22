@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\SkillRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -22,11 +24,19 @@ class Skill
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column]
+    #[ORM\Column(options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE,options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeInterface $updatedAt = null;
+
+    #[ORM\OneToMany(targetEntity: ProjectSkillAssociation::class, mappedBy: 'SkillID')]
+    private Collection $projectSkillAssociationsSkills;
+
+    public function __construct()
+    {
+        $this->projectSkillAssociationsSkills = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -80,4 +90,35 @@ class Skill
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, ProjectSkillAssociation>
+     */
+    public function getprojectSkillAssociationsSkills(): Collection
+    {
+        return $this->projectSkillAssociationsSkills;
+    }
+
+    public function addProjectSkillAssociation(ProjectSkillAssociation $projectSkillAssociation): static
+    {
+        if (!$this->projectSkillAssociationsSkills->contains($projectSkillAssociation)) {
+            $this->projectSkillAssociationsSkills->add($projectSkillAssociation);
+            $projectSkillAssociation->setSkill($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProjectSkillAssociation(ProjectSkillAssociation $projectSkillAssociation): static
+    {
+        if ($this->projectSkillAssociationsSkills->removeElement($projectSkillAssociation)) {
+            // set the owning side to null (unless already changed)
+            if ($projectSkillAssociation->getSkill() === $this) {
+                $projectSkillAssociation->setSkill(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
