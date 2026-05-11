@@ -1,0 +1,71 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { profile } from "../data/portfolio";
+
+interface NavLink {
+  href: string;
+  label: string;
+}
+
+const links: NavLink[] = [
+  { href: "#education", label: "Formation" },
+  { href: "#skills", label: "Compétences" },
+  { href: "#experience", label: "Expériences" },
+  { href: "#projects", label: "Projets" },
+  { href: "#contact", label: "Contact" },
+];
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+      <div className="container navbar__inner">
+        <a href="#home" className="navbar__brand">
+          <span className="navbar__brand-bracket">&lt;</span>
+          {profile.name}
+          <span className="navbar__brand-bracket">/&gt;</span>
+        </a>
+
+        <nav className={`navbar__links ${open ? "navbar__links--open" : ""}`}>
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="navbar__link"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href={profile.cv}
+            className="btn btn--ghost btn--sm"
+            onClick={() => setOpen(false)}
+          >
+            CV
+          </a>
+        </nav>
+
+        <button
+          className="navbar__burger"
+          aria-label="Ouvrir le menu"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+    </header>
+  );
+}
