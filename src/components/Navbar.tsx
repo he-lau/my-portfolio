@@ -46,13 +46,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href={profile.cv}
-            className="btn btn--ghost btn--sm"
-            onClick={() => setOpen(false)}
-          >
-            CV
-          </a>
         </nav>
 
         <button
