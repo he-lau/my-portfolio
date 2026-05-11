@@ -172,7 +172,7 @@ export const experiences: Experience[] = [
 export const education: Education[] = [
   {
     degree: "Master Informatique",
-    school: "Université de Paris 8",
+    school: "Université Paris 8",
     location: "Saint-Denis",
     period: "2023 – 2024",
     detail: "Spécialisation : Technologies de l'Hypermédia",
@@ -180,7 +180,7 @@ export const education: Education[] = [
   },
   {
     degree: "Licence Informatique",
-    school: "Université de Paris 8",
+    school: "Université Paris 8",
     location: "Saint-Denis",
     period: "sept. 2021 – juin 2022",
     detail: "ISEI — Informatique des Systèmes Embarqués Interactifs",
@@ -188,7 +188,7 @@ export const education: Education[] = [
   },
   {
     degree: "DUT Informatique",
-    school: "Université de Paris 13",
+    school: "Université Paris 13",
     location: "Villetaneuse",
     period: "2018 – 2020",
     logo: "/logos/paris13.png",
