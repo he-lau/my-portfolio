@@ -1,4 +1,4 @@
-export type {
+import type {
   Profile,
   AboutData,
   SkillGroup,
@@ -6,6 +6,8 @@ export type {
   Experience,
   Education,
 } from "@/types";
+
+export type { Profile, AboutData, SkillGroup, Project, Experience, Education };
 
 export const profile: Profile = {
   name: "Laurent HE",
