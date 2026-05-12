@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { education } from "@/data/portfolio";
 import AnimateIn from "./AnimateIn";
 
@@ -22,14 +23,16 @@ export default function Education() {
                 <div className="edu__left">
                   {edu.logo ? (
                     <div className="edu__logo">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <Image
                         src={edu.logo}
                         alt={edu.school}
+                        width={72}
+                        height={40}
+                        unoptimized
                         style={{
-                          maxWidth: "72px",
-                          maxHeight: "40px",
                           objectFit: "contain",
+                          width: "auto",
+                          height: "auto",
                         }}
                       />
                     </div>

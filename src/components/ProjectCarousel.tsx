@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -22,11 +23,13 @@ export default function ProjectCarousel({ images, title }: Props) {
       >
         {images.map((src, i) => (
           <div key={src} className="carousel__slide">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={src}
               alt={`${title} — vue ${i + 1}`}
               className="carousel__img"
+              width={1200}
+              height={675}
+              unoptimized
             />
           </div>
         ))}
