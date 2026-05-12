@@ -23,7 +23,11 @@ export default function ProjectCarousel({ images, title }: Props) {
         {images.map((src, i) => (
           <div key={src} className="carousel__slide">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt={`${title} — vue ${i + 1}`} className="carousel__img" />
+            <img
+              src={src}
+              alt={`${title} — vue ${i + 1}`}
+              className="carousel__img"
+            />
           </div>
         ))}
       </div>
@@ -32,13 +36,25 @@ export default function ProjectCarousel({ images, title }: Props) {
 
       {images.length > 1 && (
         <>
-          <button className="carousel__btn carousel__btn--prev" onClick={prev} aria-label="Précédent"><FiChevronLeft size={20} /></button>
-          <button className="carousel__btn carousel__btn--next" onClick={next} aria-label="Suivant"><FiChevronRight size={20} /></button>
+          <button
+            className="carousel__btn carousel__btn--prev"
+            onClick={prev}
+            aria-label="Précédent"
+          >
+            <FiChevronLeft size={20} />
+          </button>
+          <button
+            className="carousel__btn carousel__btn--next"
+            onClick={next}
+            aria-label="Suivant"
+          >
+            <FiChevronRight size={20} />
+          </button>
           <div className="carousel__dots">
             {images.map((_, i) => (
               <button
                 key={i}
-                className={`carousel__dot${i === index ? " carousel__dot--active" : ""}`}
+                className={`carousel__dot${i === index ? "carousel__dot--active" : ""}`}
                 onClick={() => setIndex(i)}
                 aria-label={`Vue ${i + 1}`}
               />

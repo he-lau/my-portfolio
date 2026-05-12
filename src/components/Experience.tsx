@@ -7,12 +7,17 @@ export default function Experience() {
       <div className="container">
         <AnimateIn direction="left">
           <h2 className="section__title">
-            <span className="section__num">03.</span> Expériences professionnelles
+            <span className="section__num">03.</span> Expériences
+            professionnelles
           </h2>
         </AnimateIn>
         <div className="timeline">
           {experiences.map((exp, index) => (
-            <AnimateIn key={`${exp.company}-${exp.period}`} delay={index * 0.1} direction="left">
+            <AnimateIn
+              key={`${exp.company}-${exp.period}`}
+              delay={index * 0.1}
+              direction="left"
+            >
               <article className="timeline__item">
                 <div className="timeline__aside">
                   <div className="timeline__dot" />

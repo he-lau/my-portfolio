@@ -3,14 +3,14 @@ import { techIcons } from "@/lib/tech-icons";
 import AnimateIn from "./AnimateIn";
 
 const categoryIcons: Record<string, string> = {
-  "Langages": "{ }",
+  Langages: "{ }",
   "Front-end": "</>",
   "Back-end": "⚙",
   "Bases de données": "🗄",
-  "DevOps": "⚡",
-  "CMS": "☰",
+  DevOps: "⚡",
+  CMS: "☰",
   "IA & Automatisation": "✦",
-  "Monitoring": "◎",
+  Monitoring: "◎",
 };
 
 export default function Skills() {

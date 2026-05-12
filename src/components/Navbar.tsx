@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
-      <div className="container navbar__inner">
+      <div className="navbar__inner container">
         <a href="#home" className="navbar__brand">
           <span className="navbar__brand-bracket">&lt;</span>
           {profile.name}

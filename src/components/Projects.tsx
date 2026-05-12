@@ -29,21 +29,31 @@ export default function Projects() {
         </AnimateIn>
         <div className="projects__grid">
           {projects.map((project, i) => (
-            <AnimateIn key={project.title} delay={i * 0.1} className="flex flex-col">
+            <AnimateIn
+              key={project.title}
+              delay={i * 0.1}
+              className="flex flex-col"
+            >
               <article className="project-card" style={{ flex: 1 }}>
                 <div className="project-card__cover">
                   {project.images && project.images.length > 0 ? (
-                    <ProjectCarousel images={project.images} title={project.title} />
+                    <ProjectCarousel
+                      images={project.images}
+                      title={project.title}
+                    />
                   ) : (
                     <div className="project-card__placeholder">
-                      <span className="project-card__placeholder-title">{project.title}</span>
+                      <span className="project-card__placeholder-title">
+                        {project.title}
+                      </span>
                       <ul className="project-card__placeholder-stack">
                         {project.stack.slice(0, 4).map((tech) => (
                           <li
                             key={tech}
                             className="project-card__placeholder-chip"
                             style={{
-                              borderColor: STACK_COLORS[tech] ?? "rgba(100,255,218,0.4)",
+                              borderColor:
+                                STACK_COLORS[tech] ?? "rgba(100,255,218,0.4)",
                               color: STACK_COLORS[tech] ?? "var(--accent)",
                             }}
                           >
@@ -57,7 +67,9 @@ export default function Projects() {
 
                 <div className="project-card__body">
                   <h3 className="project-card__title">{project.title}</h3>
-                  <p className="project-card__description">{project.description}</p>
+                  <p className="project-card__description">
+                    {project.description}
+                  </p>
                   <ul className="project-card__stack">
                     {project.stack.map((tech) => (
                       <li key={tech}>{tech}</li>
@@ -66,11 +78,21 @@ export default function Projects() {
                 </div>
 
                 <div className="project-card__footer">
-                  <a href={project.github} target="_blank" rel="noreferrer" className="project-card__btn">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-card__btn"
+                  >
                     <SiGithub size={15} /> Code
                   </a>
                   {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noreferrer" className="project-card__btn project-card__btn--accent">
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-card__btn project-card__btn--accent"
+                    >
                       <FiExternalLink size={15} /> Démo
                     </a>
                   )}

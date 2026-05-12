@@ -23,7 +23,15 @@ export default function Education() {
                   {edu.logo ? (
                     <div className="edu__logo">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={edu.logo} alt={edu.school} style={{ maxWidth: "72px", maxHeight: "40px", objectFit: "contain" }} />
+                      <img
+                        src={edu.logo}
+                        alt={edu.school}
+                        style={{
+                          maxWidth: "72px",
+                          maxHeight: "40px",
+                          objectFit: "contain",
+                        }}
+                      />
                     </div>
                   ) : null}
                   <span className="edu__year">{extractYear(edu.period)}</span>

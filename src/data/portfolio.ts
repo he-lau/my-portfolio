@@ -1,4 +1,11 @@
-export type { Profile, AboutData, SkillGroup, Project, Experience, Education } from "@/types";
+export type {
+  Profile,
+  AboutData,
+  SkillGroup,
+  Project,
+  Experience,
+  Education,
+} from "@/types";
 
 export const profile: Profile = {
   name: "Laurent HE",
@@ -63,7 +70,14 @@ export const projects: Project[] = [
     title: "Scraper de fonds de commerce",
     description:
       "Collecte automatisée d'annonces (bars, tabacs) sur cessionPME et huarenjie.com via CRON, avec API REST et interface React.",
-    stack: ["Python", "Playwright", "PostgreSQL", "Express.js", "React", "Docker"],
+    stack: [
+      "Python",
+      "Playwright",
+      "PostgreSQL",
+      "Express.js",
+      "React",
+      "Docker",
+    ],
     github: "https://github.com/he-lau/scraper-tabac",
     demo: "https://scraper.tabac.laurenthe.fr/",
     images: ["/projects/scraper-1.png", "/projects/scraper-2.png"],

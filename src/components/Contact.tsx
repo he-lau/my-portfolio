@@ -9,11 +9,14 @@ export default function Contact() {
           <h2 className="section__title">
             <span className="section__num">05.</span> Contact
           </h2>
-          <p className="mb-8 text-base text-text-dim">
-            Une idée, un projet, ou juste envie d'échanger sur le code ? Écrivez-moi,
-            je réponds sous 48 h.
+          <p className="text-text-dim mb-8 text-base">
+            Une idée, un projet, ou juste envie d'échanger sur le code ?
+            Écrivez-moi, je réponds sous 48 h.
           </p>
-          <a href={`mailto:${profile.email}`} className="btn btn--primary btn--lg">
+          <a
+            href={`mailto:${profile.email}`}
+            className="btn btn--primary btn--lg"
+          >
             {profile.email}
           </a>
           <div className="mt-8 flex gap-6 font-mono text-[0.95rem]">

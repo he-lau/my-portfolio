@@ -15,11 +15,20 @@ function TechChip({ tech }: { tech: string }) {
   );
 }
 
-function Row({ items, direction }: { items: string[]; direction: "left" | "right" }) {
+function Row({
+  items,
+  direction,
+}: {
+  items: string[];
+  direction: "left" | "right";
+}) {
   const doubled = [...items, ...items];
   return (
     <div className="tech-row">
-      <div className={`tech-row__track tech-row__track--${direction}`} aria-hidden="true">
+      <div
+        className={`tech-row__track tech-row__track--${direction}`}
+        aria-hidden="true"
+      >
         {doubled.map((tech, i) => (
           <TechChip key={`${tech}-${i}`} tech={tech} />
         ))}

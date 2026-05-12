@@ -6,13 +6,17 @@ import { profile, about } from "../data/portfolio";
 const item = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { delay, duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  transition: {
+    delay,
+    duration: 0.55,
+    ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+  },
 });
 
 export default function Hero() {
   return (
     <section id="home" className="hero">
-      <div className="container hero__inner">
+      <div className="hero__inner container">
         <motion.p className="hero__hello" {...item(0.1)}>
           <span className="hero__dot" /> Disponible pour de nouveaux projets
         </motion.p>

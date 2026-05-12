@@ -20,9 +20,11 @@
 
   --radius: 14px;
   --shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
-    Menlo, Consolas, monospace;
+  --font-sans:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:
+    "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace;
 }
 
 @theme inline {
@@ -49,8 +51,16 @@ body {
   color: var(--text);
   background-color: var(--bg);
   background-image:
-    radial-gradient(1200px 600px at 80% -10%, rgba(124, 156, 255, 0.15), transparent 60%),
-    radial-gradient(800px 500px at -10% 20%, rgba(100, 255, 218, 0.08), transparent 60%);
+    radial-gradient(
+      1200px 600px at 80% -10%,
+      rgba(124, 156, 255, 0.15),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 500px at -10% 20%,
+      rgba(100, 255, 218, 0.08),
+      transparent 60%
+    );
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
 }
@@ -92,7 +102,10 @@ h3 {
   border-radius: var(--radius);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease,
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
     border-color 0.2s ease;
   text-decoration: none;
 }
@@ -128,8 +141,11 @@ h3 {
   inset: 0 0 auto 0;
   z-index: 50;
   padding: 1rem 0;
-  transition: background-color 0.25s ease, backdrop-filter 0.25s ease,
-    box-shadow 0.25s ease, padding 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    backdrop-filter 0.25s ease,
+    box-shadow 0.25s ease,
+    padding 0.25s ease;
 }
 .navbar--scrolled {
   background-color: rgba(11, 16, 32, 0.85);
@@ -211,8 +227,13 @@ h3 {
   animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.18); }
-  50% { box-shadow: 0 0 0 8px rgba(100, 255, 218, 0); }
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(100, 255, 218, 0);
+  }
 }
 .hero__title {
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -303,12 +324,20 @@ h3 {
   animation: scroll-right 110s linear infinite;
 }
 @keyframes scroll-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @keyframes scroll-right {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 .tech-banner:hover .tech-row__track {
   animation-play-state: paused;
@@ -325,7 +354,9 @@ h3 {
   font-size: 0.85rem;
   color: var(--text-dim);
   white-space: nowrap;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
   cursor: default;
 }
 .tech-chip:hover {
@@ -360,7 +391,6 @@ h3 {
   font-size: 0.95em;
 }
 
-
 /* ----- Skills ----- */
 .skills__grid {
   display: grid;
@@ -372,7 +402,10 @@ h3 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .skills__card:hover {
   transform: translateY(-4px);
@@ -414,7 +447,10 @@ h3 {
   font-family: var(--font-mono);
   color: var(--text-dim);
   white-space: nowrap;
-  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 .skills__chip:hover {
   color: var(--accent);
@@ -447,7 +483,10 @@ h3 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 .project-card:hover {
   transform: translateY(-6px);
@@ -508,7 +547,7 @@ h3 {
   transform: translateY(-50%);
   z-index: 10;
   background: rgba(11, 16, 32, 0.85);
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
   width: 42px;
   height: 42px;
@@ -518,9 +557,12 @@ h3 {
   justify-content: center;
   cursor: pointer;
   backdrop-filter: blur(6px);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition: opacity 0.2s, background 0.2s, border-color 0.2s;
+  transition:
+    opacity 0.2s,
+    background 0.2s,
+    border-color 0.2s;
 }
 .carousel:hover .carousel__btn {
   opacity: 1;
@@ -529,8 +571,12 @@ h3 {
   background: rgba(100, 255, 218, 0.2);
   border-color: var(--accent);
 }
-.carousel__btn--prev { left: 14px; }
-.carousel__btn--next { right: 14px; }
+.carousel__btn--prev {
+  left: 14px;
+}
+.carousel__btn--next {
+  right: 14px;
+}
 .carousel__dots {
   position: absolute;
   bottom: 14px;
@@ -545,10 +591,12 @@ h3 {
   height: 8px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
   padding: 0;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 .carousel__dot--active {
   background: var(--accent);
@@ -567,8 +615,13 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
-  background: radial-gradient(ellipse at 60% 40%, rgba(100,255,218,0.07) 0%, transparent 70%),
-              linear-gradient(135deg, #0d1628 0%, #111827 100%);
+  background:
+    radial-gradient(
+      ellipse at 60% 40%,
+      rgba(100, 255, 218, 0.07) 0%,
+      transparent 70%
+    ),
+    linear-gradient(135deg, #0d1628 0%, #111827 100%);
   padding: 1.5rem;
 }
 .project-card__placeholder-title {
@@ -627,7 +680,7 @@ h3 {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-dim);
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 0.2rem 0.55rem;
@@ -648,18 +701,20 @@ h3 {
   border: 1px solid var(--border);
   color: var(--text-dim);
   background: transparent;
-  transition: border-color 0.2s, color 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
 }
 .project-card__btn:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
 .project-card__btn--accent {
-  border-color: rgba(100,255,218,0.4);
+  border-color: rgba(100, 255, 218, 0.4);
   color: var(--accent);
 }
 .project-card__btn--accent:hover {
-  background: rgba(100,255,218,0.08);
+  background: rgba(100, 255, 218, 0.08);
 }
 
 /* ----- Timeline (Experience) ----- */
@@ -702,7 +757,9 @@ h3 {
   padding: 1.5rem 1.75rem;
   margin-bottom: 1.5rem;
   flex: 1;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .timeline__card:hover {
   border-color: var(--accent);
@@ -786,7 +843,9 @@ h3 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .edu__card:hover {
   border-color: var(--accent);
@@ -878,7 +937,6 @@ h3 {
   width: fit-content;
 }
 
-
 /* ----- Responsive ----- */
 @media (max-width: 768px) {
   .about__grid {
@@ -900,7 +958,9 @@ h3 {
     transform: translateY(-10px);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
   }
   .navbar__links--open {
     transform: translateY(0);
