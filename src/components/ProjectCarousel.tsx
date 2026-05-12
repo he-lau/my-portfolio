@@ -57,7 +57,11 @@ export default function ProjectCarousel({ images, title }: Props) {
             {images.map((_, i) => (
               <button
                 key={i}
-                className={`carousel__dot${i === index ? "carousel__dot--active" : ""}`}
+                className={
+                  i === index
+                    ? "carousel__dot carousel__dot--active"
+                    : "carousel__dot"
+                }
                 onClick={() => setIndex(i)}
                 aria-label={`Vue ${i + 1}`}
               />
