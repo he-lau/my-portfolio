@@ -37,7 +37,7 @@ export default function Experience() {
                     </div>
                   </div>
                   <ul className="timeline__tasks">
-                    {exp.tasks.map((task) => (
+                    {exp.tasks.map((task: string) => (
                       <li key={task}>{task}</li>
                     ))}
                   </ul>
