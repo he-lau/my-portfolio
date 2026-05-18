@@ -26,7 +26,7 @@ export const profile: Profile = {
 
 export const about: AboutData = {
   paragraphs: [
-    "Développeur PHP / JavaScript titulaire d'un Master en Informatique, avec 2 ans d'expérience sur des projets back-end et front-end.",
+    "Titulaire d'un Master en Informatique, avec 2 ans d'expérience sur des projets back-end et front-end.",
     "Animé par l'envie d'apprendre, je recherche un poste stimulant où je pourrai monter en compétences, contribuer à des projets solides et évoluer aux côtés d'une équipe expérimentée.",
   ],
   highlights: ["2 ans d'expérience", "Master Informatique", "Disponible"],
